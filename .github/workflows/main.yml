@@ -21,9 +21,9 @@ jobs:
     - name: Publish BlazorServerApp.sln .NET Core Project
       run: dotnet publish  -c Release -o release --nologo
       
-        # changes the base-tag in index.html from '/' to 'BlazorServerApp' to match GitHub Pages repository subdirectory
-    - name: Change base-tag in index.html from / to BlazorServerApp
-      run: sed -i 's/<base href="\/" \/>/<base href="\/BlazorServerApp\/" \/>/g' release/wwwroot/index.html
+        # changes the base-tag in index.html from '/' to 'BlazorServerApp.sln' to match GitHub Pages repository subdirectory
+    - name: Change base-tag in index.html from / to BlazorServerApp.sln
+      run: sed -i 's/<base href="\/" \/>/<base href="\/BlazorServerApp.sln\/" \/>/g' release/wwwroot/index.html
       
     - name: Commit wwwroot to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.7.1
