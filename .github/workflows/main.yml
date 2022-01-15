@@ -11,15 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Setup dotnet
+    - name:  Setup .NET Core SDK
       uses: actions/setup-dotnet@v1 
       with:
-          dotnet-version: 3.0.x
+          dotnet-version: 3.1
         
         
     # publishes Blazor project to the release-folder
-    - name: Publish .NET Core Project
-      run: dotnet publish hussain_developer_expense_manager_web_app.sln -c Release -o release --nologo
+    - name: Publish BlazorServerApp.sln .NET Core Project
+      run: dotnet publish  -c Release -o release --nologo
     - name: Commit wwwroot to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with:
