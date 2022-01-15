@@ -23,7 +23,7 @@ jobs:
       
         # changes the base-tag in index.html from '/' to 'blzorbookstoretest' to match GitHub Pages repository subdirectory
     - name: Change base-tag in index.html from / to blzorbookstoretest
-      run: sed -i 's/<base href="\/" \/>/<base href="\/blzorbookstoretest\/" \/>/g' release/wwwroot/index.html
+      run: sed -i 's/<base href="\/" \/>/<base href="\/blzorbookstoretest\/" \/>/g' 
       
     - name: Commit wwwroot to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.7.1
